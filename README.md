@@ -1,5 +1,4 @@
 # javascript_template_GL
-template om javascript opengl te starten
 
 It is a good moment to have a template to start your own hobby javascript opgen GL project, using three.js
 
