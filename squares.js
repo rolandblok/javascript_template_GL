@@ -32,6 +32,17 @@ class Squares {
       this.stats = new Stats();
       document.body.appendChild(this.stats.dom);
 
+      this.rot_speed_x =  0.004;
+      this.rot_speed_y =  0.008;
+
+      this.gui = new dat.GUI();
+      this.gui_speeds = this.gui.addFolder('speeds')
+
+      this.gui_speeds.add(this, "rot_speed_x");
+      this.gui_speeds.add(this, "rot_speed_y");
+      this.gui_speeds.open();
+
+
       // THREE / GL
       this.three_scene = new THREE.Scene();
 
@@ -95,8 +106,8 @@ class Squares {
 
   render() {
     
-    this.mesh_box.rotation.x += 0.004;
-    this.mesh_box.rotation.y += 0.008;
+    this.mesh_box.rotation.x += this.rot_speed_x;
+    this.mesh_box.rotation.y += this.rot_speed_y;
 
     this.renderer.render(this.three_scene, this.THREEcamera)
 
